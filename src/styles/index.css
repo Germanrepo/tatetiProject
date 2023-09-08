@@ -1,0 +1,153 @@
+body{
+    background-color: black;
+}
+
+.container{
+    background: linear-gradient(40deg, #404, #505, #606, #707);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.panelTurn{
+    width: 35%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.turn{
+    background-color: #202;
+    width: 50%;
+    padding: .3125rem;
+    border-radius: .625rem;
+    text-align: center;
+}
+.turn svg{
+    color: #707;
+}
+.turn p {
+    color: #707;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.25rem;
+    padding: .5rem;
+}
+
+.panelGame{
+    width: 45%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .625rem;
+}
+
+.cell{
+    background-color: #202;
+    position: relative;
+    padding: .3125rem;
+    border-radius: .625rem;
+}
+
+.cell svg{
+    opacity: 0;
+    transition: opacity .2s;
+}
+.circleSvg{
+    color: #f00;
+}
+.crossSvg{
+    color: #00f;
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+
+.turnActive{
+    background-color: #104;
+    transition: background-color .2s;
+}
+.turnActive svg{
+    color: #2ff;
+    transition: color .2s;
+}
+.turnActive p{
+    color: #2ff;
+    transition: color .2s;
+}
+
+/* ================== Media Queries ============ */
+@media screen and (width <= 500px){
+    .container{
+        flex-flow: column nowrap;
+        height: 100vh;
+    }
+
+    .panelTurn{
+        flex-flow: row nowrap;
+        width: 90%;
+    }
+
+    .panelGame{
+        width: 100%;
+    }
+}
+
+@media screen and (width > 500px) and (width < 600px) and (height <= 720px){
+    .container{
+        flex-flow: column nowrap;
+        height: none;
+        gap: 2rem;
+    }
+
+    .panelTurn{
+        flex-flow: row nowrap;
+        width: 90%;
+    }
+
+    .panelGame{
+        width: 100%;
+    }
+}
+
+@media screen and (height < 600px){
+    .container{
+        height: 100vh;
+    }
+
+    .panelTurn{
+        width: 35%;
+    }
+
+    .panelGame{
+        width: 45%;
+    }
+}
+
+@media screen and (width < 920px) and (height > 1000px){
+    .container{
+        flex-flow: column nowrap;
+        height: 100vh;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .panelTurn{
+        flex-flow: row nowrap;
+        width: 80%;
+    }
+
+    .panelGame{
+        width: 90%;
+    }
+}
+
+@media screen and (height <= 920px) and (width > 1000px){
+    .container{
+        height: 100vh;
+    }
+}
+
